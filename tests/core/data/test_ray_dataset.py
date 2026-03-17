@@ -39,7 +39,7 @@ class RayDatasetFuncsTest(DataJuicerTestCaseBase):
     def tearDown(self) -> None:
         super().tearDown()
         if os.path.exists(self.tmp_dir):
-            os.system(f"rm -rf {self.tmp_dir}")
+            import shutil; shutil.rmtree(self.tmp_dir)
 
     def _touch_a_file(self, path):
         """Create a file at the given path"""
